@@ -142,6 +142,10 @@ UPDATE & PUBLISH
 
     $ git push --tags
 
+> ...publish a single tag
+
+    $ git push <remote> <tagname>
+
 > Add an additional URL to an existing remote
 
     $ git remote set-url --add <remote> <url>
