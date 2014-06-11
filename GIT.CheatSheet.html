@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>GIT.CheatSheet</title>
+	<link rel="stylesheet" type="text/css" href="css/foundation.grid.min.css">
+	<style type="text/css">
+		body {
+			background-color: #eee;
+		}
+
+		h1 {
+			font-size: 2em;
+			margin: 15px 5px;
+			text-align: center;
+		}
+
+		h2 {
+			color: #eee;
+			font-size: 1em;
+			margin-top: 1em;
+			padding: 2px 7px;
+			font-weight: bold;
+			text-align: right;
+			background-color: #334;
+		}
+
+		pre {
+			color: #333;
+			padding: 5px;
+			background-color: #FFF48F;
+			vertical-align: middle;
+		}
+
+		code {
+			color: #333;
+			padding: 5px 0 0 0;
+			vertical-align: middle;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="row">
+		<h1 id="git-cheat-sheet">GIT CHEAT SHEET</h1>
+	</div>
+	
+	<div class="row">
+		<div class="large-4 columns">
+			<!-- INICIO: CREATE -->
+			<h2 id="create">CREATE</h2>
+				<blockquote>
+					<p>Clone an existing repository</p>
+				</blockquote>
+				<pre><code>$ git clone ssh://user@domain.com/repo.git</code></pre>
+				<blockquote>
+					<p>Create a new local repository</p>
+				</blockquote>
+				<pre><code>$ git init</code></pre>
+			<!-- FIN: CREATE -->
+
+			<!-- INICIO: LOCAL CHANGES -->
+			<h2 id="local-changes">LOCAL CHANGES</h2>
+				<blockquote>
+					<p>Changed files in your working directory</p>
+				</blockquote>
+				<pre><code>$ git status</code></pre>
+				<blockquote>
+					<p>Changes to tracked files</p>
+				</blockquote>
+				<pre><code>$ git diff</code></pre>
+				<blockquote>
+					<p>Add all current changes to the next commit</p>
+				</blockquote>
+				<pre><code>$ git add .</code></pre>
+				<blockquote>
+					<p>Add some changes in <file> to the next commit</p>
+				</blockquote>
+				<pre><code>$ git add -p &lt;file&gt;</code></pre>
+				<blockquote>
+					<p>Commit all local changes in tracked files</p>
+				</blockquote>
+				<pre><code>$ git commit -a</code></pre>
+				<blockquote>
+					<p>Commit previously staged changes</p>
+				</blockquote>
+				<pre><code>$ git commit</code></pre>
+				<blockquote>
+					<p>Stop tracking a file</p>
+				</blockquote>
+				<pre><code>$ git rm --cached &lt;file&gt;<code></pre>
+				<blockquote>
+					<p>Change the last commit</p>
+					<blockquote>
+						<p>Don‘t amend published commits!</p>
+					</blockquote>
+				</blockquote>
+				<pre><code>$ git commit --amend</code></pre>
+			<!-- FIN: LOCAL CHANGES -->
+
+			<!-- INICIO: COMMIT HISTORY -->
+			<h2 id="commit-history">COMMIT HISTORY</h2>
+				<blockquote>
+					<p>Show all commits, starting with newest</p>
+				</blockquote>
+				<pre><code>$ git log</code></pre>
+				<blockquote>
+					<p>Show changes over time for a specific file</p>
+				</blockquote>
+				<pre><code>$ git log -p &lt;file&gt;</code></pre>
+				<blockquote>
+					<p>Who changed what and when in <file></p>
+				</blockquote>
+				<pre><code>$ git blame &lt;file&gt;</code></pre>
+				<blockquote>
+					<p>Show all commits in nice format</p>
+				</blockquote>
+				<pre><code>$ git log</code></pre>
+				<pre><code>  --pretty=format:"%h - %an, %ar : %s"</code></pre>
+				<blockquote>
+					<p>Show commits graph</p>
+				</blockquote>
+				<pre><code>$ git log --pretty=format:"%h %s" --graph</code></pre>
+			<!-- FIN: COMMIT HISTORY -->
+		</div>
+
+		<div class="large-4 columns">
+			<!-- INICIO: BRANCHES -->
+			<h2 id="branches-tags">BRANCHES &amp; TAGS</h2>
+				<blockquote>
+					<p>List all existing branches</p>
+				</blockquote>
+				<pre><code>$ git branch</code></pre>
+				<blockquote>
+					<p>Switch HEAD branch</p>
+				</blockquote>
+				<pre><code>$ git checkout &lt;branch&gt;</code></pre>
+				<blockquote>
+					<p>Create a new branch based on your current HEAD</p>
+				</blockquote>
+				<pre><code>$ git branch &lt;new-branch&gt;</code></pre>
+				<blockquote>
+					<p>Create a new tracking branch based on a remote branch</p>
+				</blockquote>
+				<pre><code>$ git checkout --track &lt;remote/branch&gt;</code></pre>
+				<blockquote>
+					<p>...with different local name</p>
+				</blockquote>
+				<pre><code>$ git checkout -b &lt;local_name&gt;</code></pre>
+				<pre><code>  &lt;remote/branch&gt;</code></pre>
+				<blockquote>
+					<p>Delete a local branch</p>
+				</blockquote>
+				<pre><code>$ git branch -d &lt;branch&gt;</code></pre>
+				<blockquote>
+					<p>Mark the current commit with a tag</p>
+				</blockquote>
+				<pre><code>$ git tag &lt;tag-name&gt;</code></pre>
+			<!-- FIN: BRANCHES -->
+
+			<!-- INICIO: UPDATE & PUBLISH -->
+			<h2 id="update-publish">UPDATE &amp; PUBLISH</h2>
+				<blockquote>
+					<p>List all currently configured remotes</p>
+				</blockquote>
+				<pre><code>$ git remote -v</code></pre>
+				<blockquote>
+					<p>Show information about a remote</p>
+				</blockquote>
+				<pre><code>$ git remote show &lt;remote&gt;</code></pre>
+				<blockquote>
+					<p>Add new remote repository, named <remote> </p>
+				</blockquote>
+				<pre><code>$ git remote add &lt;remote&gt; &lt;url&gt;</code></pre>
+				<blockquote>
+					<p>Download all changes from <remote>, but don‘t integrate into HEAD</p>
+				</blockquote>
+				<pre><code>$ git fetch &lt;remote&gt;</code></pre>
+				<blockquote>
+					<p>Download changes and directly merge/ integrate into HEAD</p>
+				</blockquote>
+				<pre><code>$ git pull &lt;remote&gt; &lt;branch&gt;</code></pre>
+				<blockquote>
+					<p>Publish local changes on a remote</p>
+				</blockquote>
+				<pre><code>$ git push &lt;remote&gt; &lt;branch&gt;</code></pre>
+				<blockquote>
+					<p>Delete a branch on the remote</p>
+				</blockquote>
+				<pre><code>$ git branch -dr &lt;remote/branch&gt;</code></pre>
+				<blockquote>
+					<p>Publish your tags</p>
+				</blockquote>
+				<pre><code>$ git push --tags</code></pre>
+				<blockquote>
+					<p>Add an additional URL to an existing remote</p>
+				</blockquote>
+				<pre><code>$ git remote set-url --add &lt;remote&gt; &lt;url&gt;</code></pre>
+			<!-- FIN: UPDATE & PUBLISH -->
+		</div>
+
+		<div class="large-4 columns">
+			<!-- INICIO: MERGE & REBASE -->
+			<h2 id="merge-rebase">MERGE &amp; REBASE</h2>
+				<blockquote>
+					<p>Merge <branch> into your current HEAD</p>
+				</blockquote>
+				<pre><code>$ git merge &lt;branch&gt;</code></pre>
+				<blockquote>
+					<p>Rebase your current HEAD onto <branch></p>
+					<blockquote>
+						<p>Don‘t rebase published commits!</p>
+					</blockquote>
+				</blockquote>
+				<pre><code>$ git rebase &lt;branch&gt;</code></pre>
+				<blockquote>
+					<p>Abort a rebase</p>
+				</blockquote>
+				<pre><code>$ git rebase --abort</code></pre>
+				<blockquote>
+					<p>Continue a rebase after resolving conflicts</p>
+				</blockquote>
+				<pre><code>$ git rebase --continue</code></pre>
+				<blockquote>
+					<p>Use your configured merge tool to solve conflicts</p>
+				</blockquote>
+				<pre><code>$ git mergetool</code></pre>
+				<blockquote>
+					<p>Use your editor to manually solve conflicts and (after resolving) mark file as resolved</p>
+				</blockquote>
+				<pre><code>$ git add &lt;resolved-file&gt;</code></pre>
+				<pre><code>$ git rm &lt;resolved-file&gt;</code></pre>
+			<!-- FIN: MERGE & REBASE -->
+
+			<!-- INICIO: UNDO -->
+			<h2 id="undo">UNDO</h2>
+				<blockquote>
+					<p>Reset a file to a specific commit</p>
+				</blockquote>
+				<pre><code>$ git checkout &lt;commit&gt; &lt;file&gt;</code></pre>
+				<blockquote>
+					<p>Discard all local changes in your working directory  </p>
+				</blockquote>
+				<pre><code>$ git reset --hard HEAD</code></pre>
+				<blockquote>
+					<p>Discard local changes in a specific file</p>
+				</blockquote>
+				<pre><code>$ git checkout HEAD &lt;file&gt;</code></pre>
+				<blockquote>
+					<p>Revert a commit (by producing a new commit with contrary changes)</p>
+				</blockquote>
+				<pre><code>$ git revert &lt;commit&gt;</code></pre>
+				<blockquote>
+					<p>Reset your HEAD pointer to a previous commit</p>
+					<blockquote>
+						<p>...and discard all changes since then</p>
+					</blockquote>
+				</blockquote>
+				<pre><code>$ git reset --hard &lt;commit&gt;</code></pre>
+				<blockquote>
+					<p>...and preserve all changes as unstaged changes</p>
+				</blockquote>
+				<pre><code>$ git reset &lt;commit&gt;</code></pre>
+				<blockquote>
+					<p>...and preserve uncommitted local changes</p>
+				</blockquote>
+				<pre><code>$ git reset --keep &lt;commit&gt;</code></pre>
+			<!-- FIN: UNDO -->
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="large-12">
+			<hr />
+			<blockquote>
+				<p>Credits to:</p>
+				<blockquote>
+				<p>GIT CHEAT SHEET presented by TOWER (<a href="http://www.git-tower.com">www.git-tower.com</a>)</p>
+				<p>proGIT book (<a href="http://www.git-scm.org/book">http://www.git-scm.org/book</a>)</p>
+				<p>Schwuk blog (<a href="http://blog.schwuk.com/2013/02/11/using-multiple-remote-repositories-with-git/">blog.schwuk.com</a>)</p>
+				</blockquote>
+			</blockquote>
+		</div>
+	</div>
+	
+</body>
+</html>
