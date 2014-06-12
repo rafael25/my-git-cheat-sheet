@@ -1,108 +1,45 @@
 ---
+layout: cheat_sheet
+title:  "GIT Cheat Sheet"
 ---
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>GIT.CheatSheet</title>
-	<link rel="stylesheet" type="text/css" href="css/foundation.grid.min.css">
-	<style type="text/css">
-		body {
-			background-color: #eee;
-		}
 
-		h1 {
-			font-size: 2em;
-			margin: 15px 5px;
-			text-align: center;
-		}
+<div class="large-4 columns">
+	<!-- INICIO: CREATE -->
+		{% capture create %}{% include git_create.markdown %}{% endcapture %}
+		{{ create | markdownify }}
+	<!-- FIN: CREATE -->
 
-		h2 {
-			color: #eee;
-			font-size: 1em;
-			margin-top: 1em;
-			padding: 2px 7px;
-			font-weight: bold;
-			text-align: right;
-			background-color: #334;
-		}
+	<!-- INICIO: LOCAL CHANGES -->
+		{% capture local_changes %}{% include git_local_changes.markdown %}{% endcapture %}
+		{{ local_changes | markdownify }}
+	<!-- FIN: LOCAL CHANGES -->
 
-		pre {
-			color: #333;
-			padding: 5px;
-			background-color: #FFF48F;
-			vertical-align: middle;
-		}
+	<!-- INICIO: COMMIT HISTORY -->
+		{% capture commit_history %}{% include git_commit_history.markdown %}{% endcapture %}
+		{{ commit_history | markdownify }}
+	<!-- FIN: COMMIT HISTORY -->
+</div>
 
-		code {
-			color: #333;
-			padding: 5px 0 0 0;
-			vertical-align: middle;
-		}
-	</style>
-</head>
+<div class="large-4 columns">
+	<!-- INICIO: BRANCHES & TAGS -->
+		{% capture branches_tags %}{% include git_branches_tags.markdown %}{% endcapture %}
+		{{ branches_tags | markdownify }}
+	<!-- FIN: BRANCHES -->
 
-<body>
-	<div class="row">
-		<h1 id="git-cheat-sheet">GIT CHEAT SHEET</h1>
-	</div>
-	
-	<div class="row">
-		<div class="large-4 columns">
-			<!-- INICIO: CREATE -->
-				{% capture create %}{% include git_create.markdown %}{% endcapture %}
-				{{ create | markdownify }}
-			<!-- FIN: CREATE -->
+	<!-- INICIO: UPDATE & PUBLISH -->
+		{% capture update_publish %}{% include git_update_publish.markdown %}{% endcapture %}
+		{{ update_publish | markdownify }}
+	<!-- FIN: UPDATE & PUBLISH -->
+</div>
 
-			<!-- INICIO: LOCAL CHANGES -->
-				{% capture local_changes %}{% include git_local_changes.markdown %}{% endcapture %}
-				{{ local_changes | markdownify }}
-			<!-- FIN: LOCAL CHANGES -->
+<div class="large-4 columns">
+	<!-- INICIO: MERGE & REBASE -->
+		{% capture merge_rebase %}{% include git_merge_rebase.markdown %}{% endcapture %}
+		{{ merge_rebase | markdownify }}
+	<!-- FIN: MERGE & REBASE -->
 
-			<!-- INICIO: COMMIT HISTORY -->
-				{% capture commit_history %}{% include git_commit_history.markdown %}{% endcapture %}
-				{{ commit_history | markdownify }}
-			<!-- FIN: COMMIT HISTORY -->
-		</div>
-
-		<div class="large-4 columns">
-			<!-- INICIO: BRANCHES & TAGS -->
-				{% capture branches_tags %}{% include git_branches_tags.markdown %}{% endcapture %}
-				{{ branches_tags | markdownify }}
-			<!-- FIN: BRANCHES -->
-
-			<!-- INICIO: UPDATE & PUBLISH -->
-				{% capture update_publish %}{% include git_update_publish.markdown %}{% endcapture %}
-				{{ update_publish | markdownify }}
-			<!-- FIN: UPDATE & PUBLISH -->
-		</div>
-
-		<div class="large-4 columns">
-			<!-- INICIO: MERGE & REBASE -->
-				{% capture merge_rebase %}{% include git_merge_rebase.markdown %}{% endcapture %}
-				{{ merge_rebase | markdownify }}
-			<!-- FIN: MERGE & REBASE -->
-
-			<!-- INICIO: UNDO -->
-				{% capture undo %}{% include git_undo.markdown %}{% endcapture %}
-				{{ undo | markdownify }}
-			<!-- FIN: UNDO -->
-		</div>
-	</div>
-
-	<div class="row">
-		<div class="large-12">
-			<hr />
-			<blockquote>
-				<p>Credits to:</p>
-				<blockquote>
-				<p>GIT CHEAT SHEET presented by TOWER (<a href="http://www.git-tower.com">www.git-tower.com</a>)</p>
-				<p>proGIT book (<a href="http://www.git-scm.org/book">http://www.git-scm.org/book</a>)</p>
-				<p>Schwuk blog (<a href="http://blog.schwuk.com/2013/02/11/using-multiple-remote-repositories-with-git/">blog.schwuk.com</a>)</p>
-				</blockquote>
-			</blockquote>
-		</div>
-	</div>
-	
-</body>
-</html>
+	<!-- INICIO: UNDO -->
+		{% capture undo %}{% include git_undo.markdown %}{% endcapture %}
+		{{ undo | markdownify }}
+	<!-- FIN: UNDO -->
+</div>
