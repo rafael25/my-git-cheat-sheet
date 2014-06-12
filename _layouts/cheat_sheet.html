@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>{{ page.title }}</title>
+	<link rel="stylesheet" type="text/css" href="css/foundation.grid.min.css">
+	<style type="text/css">
+		body {
+			background-color: #eee;
+		}
+
+		h1 {
+			font-size: 2em;
+			margin: 15px 5px;
+			text-align: center;
+		}
+
+		h2 {
+			color: #eee;
+			font-size: 1em;
+			margin-top: 1em;
+			padding: 2px 7px;
+			font-weight: bold;
+			text-align: right;
+			background-color: #334;
+		}
+
+		pre {
+			color: #333;
+			padding: 5px;
+			background-color: #FFF48F;
+			vertical-align: middle;
+		}
+
+		code {
+			color: #333;
+			padding: 5px 0 0 0;
+			vertical-align: middle;
+		}
+	</style>
+</head>
+
+<body>
+	<div class="row">
+		<h1 id="title">{{ page.title | upcase }}</h1>
+	</div>
+	
+	<div class="row">
+		{{ content }}
+	</div>
+
+	<div class="row">
+		<div class="large-12">
+			<hr />
+			<!-- SOURCES -->
+			{% capture sources %}{% include git_sources.markdown %}{% endcapture %}
+			{{ sources | markdownify }}
+		</div>
+	</div>
+	
+</body>
+</html>
