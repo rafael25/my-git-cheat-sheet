@@ -30,3 +30,7 @@ BRANCHES & TAGS
 > Mark the current commit with a tag
 
     $ git tag <tag-name>
+
+> Create a disconnected branch
+
+    $ git checkout --orphan <branch>
