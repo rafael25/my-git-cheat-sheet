@@ -37,6 +37,10 @@ UPDATE & PUBLISH
 
     $ git push <remote> <tagname>
 
+> Set current branch to track a remote branch
+
+    $ git branch -u <remote>/<branch>
+
 > Add an additional URL to an existing remote
 
     $ git remote set-url --add <remote> <url>
