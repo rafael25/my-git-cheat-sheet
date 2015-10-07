@@ -34,3 +34,7 @@ LOCAL CHANGES
 > > Don‘t amend published commits!
 
     $ git commit --amend
+
+> Ingnore changes in file, temporarily
+
+    $ git update-index --assume-unchanged <file>
