@@ -41,6 +41,10 @@ UPDATE & PUBLISH
 
     $ git branch -u <remote>/<branch>
 
+> Publish branch to remote
+
+    $ git push -u <remote> <local-branch>
+
 > Add an additional URL to an existing remote
 
     $ git remote set-url --add <remote> <url>
